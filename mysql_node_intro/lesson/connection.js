@@ -9,6 +9,11 @@ var mysql = require('mysql');
 
 //creating a database client to connect to,
 //which as you see, uses the object that we set up
+/*
+	Replace the values in this object with your connection parameters
+	Your connection should be the same if you have a 'first_sql' database and there's no password
+	If you do not have a 'first_sql' database, create one
+*/
 var databaseConnection = mysql.createConnection({
 	user: 'root',
 	password: '',
