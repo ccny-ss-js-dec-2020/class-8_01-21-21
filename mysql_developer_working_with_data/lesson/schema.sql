@@ -16,8 +16,8 @@ SELECT * FROM countries WHERE region='Africa' AND subregion='Northern Africa';
 /* Reading all columns for the records from the countries table that have a subregion as 'Southern Asia' or a subregion as 'Western Asia' */
 SELECT * FROM countries WHERE subregion='Southern Asia' OR subregion='Western Asia';
 
-/* Reading all columns for the records from the countries table that have a name with the word Ireland contained in it */
-SELECT * FROM countries WHERE name LIKE '%Ireland%';
+/* Reading all columns for the records from the countries table that have a subregion with the word Europe contained in it */
+SELECT * FROM countries WHERE subregion LIKE '%Europe%';
 
 /* Reading all columns for the records from the countries table that have a name that starts with the letter 'A' */
 SELECT * FROM countries WHERE name LIKE 'A%';
