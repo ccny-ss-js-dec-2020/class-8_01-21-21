@@ -35,14 +35,38 @@ INSERT INTO performers_performances (performer_id, performance_id) VALUES (2,1);
 INSERT INTO performers_performances (performer_id, performance_id) VALUES (1,2);
 INSERT INTO performers_performances (performer_id, performance_id) VALUES (2,3);
 
-/* To get all of the Nicolas Cage Moves */
+/* To get all of the performance id's of the Nicolas Cage Moves */
 SELECT performance_id FROM performers_performances
 INNER JOIN performers
 ON performers_performances.performer_id=performers.id
 WHERE performers.id=1;
 
-/* To get all of the actors in Con Air */
+/* To get all of the performance names of Nicolas Cage Movies */
+SELECT performances.title FROM performers_performances
+INNER JOIN performers_two
+INNER JOIN performances
+ON performers_performances.performer_id=performers_two.id
+AND performers_performances.performance_id=performances.id
+WHERE performers_two.name='Nicolas Cage';
+
+/* To get all of the performance names of Elizabeth Shue Movies */
+SELECT performances.title FROM performers_performances
+INNER JOIN performers_two
+INNER JOIN performances
+ON performers_performances.performer_id=performers_two.id
+AND performers_performances.performance_id=performances.id
+WHERE performers_two.name='Elizabeth Shue';
+
+/* To get all of the performers id's in Con Air */
 SELECT performer_id FROM performers_performances
 INNER JOIN performances
 ON performers_performances.performance_id=performances.id
 WHERE performances.id=1;
+
+/* To get all of the performers names in Con Air */
+SELECT performers.name FROM performers_performances
+INNER JOIN performances
+INNER JOIN performers
+ON performers_performances.performance_id=performances.id
+AND performers_performances.performer_id=performers.id
+WHERE performances.title='Con Air';
