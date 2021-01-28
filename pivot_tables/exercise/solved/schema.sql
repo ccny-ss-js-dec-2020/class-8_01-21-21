@@ -43,19 +43,19 @@ WHERE performers.id=1;
 
 /* To get all of the performance names of Nicolas Cage Movies */
 SELECT performances.title FROM performers_performances
-INNER JOIN performers_two
+INNER JOIN performers
 INNER JOIN performances
-ON performers_performances.performer_id=performers_two.id
+ON performers_performances.performer_id=performers.id
 AND performers_performances.performance_id=performances.id
-WHERE performers_two.name='Nicolas Cage';
+WHERE performers.name='Nicolas Cage';
 
 /* To get all of the performance names of Elizabeth Shue Movies */
 SELECT performances.title FROM performers_performances
-INNER JOIN performers_two
+INNER JOIN performers
 INNER JOIN performances
-ON performers_performances.performer_id=performers_two.id
+ON performers_performances.performer_id=performers.id
 AND performers_performances.performance_id=performances.id
-WHERE performers_two.name='Elizabeth Shue';
+WHERE performers.name='Elizabeth Shue';
 
 /* To get all of the performers id's in Con Air */
 SELECT performer_id FROM performers_performances
