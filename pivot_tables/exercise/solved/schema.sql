@@ -26,8 +26,8 @@ INSERT INTO performances (title, type) VALUES ('Karate Kid', 'Movie');
 CREATE TABLE performers_performances (
   performer_id INT NOT NULL,
   performance_id INT NOT NULL,
-  FOREIGN KEY performer_id REFERENCES performers(id),
-  FOREIGN KEY performance_id REFERENCES performances(id)
+  FOREIGN KEY (performer_id) REFERENCES performers(id),
+  FOREIGN KEY (performance_id) REFERENCES performances(id)
 );
 
 INSERT INTO performers_performances (performer_id, performance_id) VALUES (1,1);
